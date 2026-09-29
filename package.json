@@ -1,0 +1,32 @@
+{
+  "name": "clip-maker",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build --webpack",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "doctor": "node --import tsx scripts/doctor.ts",
+    "media:benchmark": "node --import tsx scripts/media/benchmark.ts",
+    "test:media": "node --import tsx --test tests/*.test.ts",
+    "media:clips": "node --import tsx scripts/media/clips.ts",
+    "media:reselect": "node --import tsx scripts/media/reselect.ts"
+  },
+  "dependencies": {
+    "next": "^16.3.5",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "sass": "^1.93.0",
+    "tsx": "^4.23.13",
+    "typescript": "^5.9.0"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}

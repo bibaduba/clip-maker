@@ -1,0 +1,4 @@
+whisperx==3.8.6
+opencv-python-headless==4.12.0.88
+# On Windows, replace WhisperX's CPU PyTorch wheel with the official CUDA build:
+# python -m pip install --force-reinstall torch==2.8.0 torchvision==0.23.0 torchaudio==2.8.0 --index-url https://download.pytorch.org/whl/cu128

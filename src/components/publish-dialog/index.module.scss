@@ -1,0 +1,23 @@
+.backdrop { position: fixed; z-index: 60; inset: 0; display: flex; padding: 20px; align-items: center; justify-content: center; background: rgba(0,0,0,.62); backdrop-filter: blur(4px); }
+.dialog { width: min(560px,100%); max-height: calc(100vh - 40px); overflow-y: auto; padding: 22px; border: 1px solid var(--line); border-radius: 18px; background: var(--background); box-shadow: 0 24px 70px rgba(0,0,0,.35); }
+.dialog header { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
+.dialog header span { color: var(--muted); font-size: 9px; letter-spacing: 1px; }
+.dialog h2 { margin: 5px 0 18px; font-size: 21px; }
+.dialog header button { width: 32px; height: 32px; border: 1px solid var(--line); border-radius: 50%; background: transparent; color: var(--text); cursor: pointer; font-size: 20px; }
+.dialog > label, .row label { display: flex; margin-top: 13px; flex: 1; flex-direction: column; gap: 6px; color: var(--muted); font-size: 10px; }
+.dialog input, .dialog textarea, .dialog select { width: 100%; padding: 10px 11px; border: 1px solid var(--input-border); border-radius: 9px; background: var(--input); color: var(--text); font: inherit; }
+.dialog textarea { resize: vertical; line-height: 1.45; }
+.labelHeader { display: flex; min-height: 27px; align-items: center; justify-content: space-between; gap: 10px; }
+.labelHeader button { padding: 5px 9px; border: 1px solid rgba(67,165,255,.38); border-radius: 7px; background: rgba(67,165,255,.1); color: #43a5ff; cursor: pointer; font-size: 9px; font-weight: 700; }
+.dialog label > small { color: var(--muted); font-size: 8px; line-height: 1.4; }
+.row { display: flex; gap: 12px; }
+.dialog > small { display: block; margin-top: 12px; color: var(--muted); font-size: 9px; line-height: 1.45; }
+.connect { padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+.connect p { margin: 0 0 14px; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.connect a, .dialog footer button:last-child { display: inline-flex; padding: 10px 14px; border: 0; border-radius: 9px; background: var(--button); color: #fff; text-decoration: none; font-weight: 600; }
+.status { margin-top: 14px; padding: 10px 12px; border-radius: 9px; background: var(--switch-off); font-size: 11px; }
+.published { background: rgba(72,199,207,.12); }.failed,.error { color: #b94f4f; }.status a { color: var(--text); }
+.dialog footer { display: flex; margin-top: 18px; justify-content: flex-end; gap: 9px; }
+.dialog footer button { padding: 10px 14px; border: 1px solid var(--line); border-radius: 9px; background: transparent; color: var(--text); cursor: pointer; }
+.dialog button:disabled { cursor: wait; opacity: .55; }
+@media(max-width:520px){.row{flex-direction:column;gap:0}}

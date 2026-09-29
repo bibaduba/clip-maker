@@ -1,0 +1,25 @@
+.form { display: flex; flex-direction: column; gap: 18px; }
+.form section { padding: 22px; border: 1px solid var(--line); border-radius: 15px; background: var(--card); }
+.form h2 { margin: 0 0 18px; font-size: 16px; font-weight: 600; }
+.form label { display: flex; max-width: 460px; margin-top: 13px; flex-direction: column; gap: 7px; color: var(--muted); font-size: 11px; }
+.form input, .form select { height: 42px; padding: 0 11px; border: 1px solid var(--input-border); border-radius: 8px; background: var(--input); color: var(--text); }
+.form .check { flex-direction: row; align-items: center; color: var(--text); }
+.check input { width: 16px; height: 16px; accent-color: var(--control-active); }
+.actions { display: flex; align-items: center; gap: 14px; }
+.actions button { padding: 11px 17px; border: 0; border-radius: 9px; background: var(--button); color: #fff; cursor: pointer; font-weight: 600; }
+.actions span { color: var(--muted); font-size: 11px; }
+.storage { max-width: 560px; }
+.storageHeader { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.storageHeader strong { font-size: 25px; font-weight: 500; }
+.storageHeader span { color: var(--muted); font-size: 10px; }
+.storageBar { display: flex; height: 12px; overflow: hidden; margin-top: 12px; border-radius: 999px; background: #d99a54; }
+.storageBar i { display: block; height: 100%; background: #47a4e6; }
+.storageLegend { display: flex; margin-top: 9px; flex-wrap: wrap; gap: 14px; color: var(--muted); font-size: 10px; }
+.storageLegend span { display: flex; align-items: center; gap: 5px; }
+.storageLegend i { width: 8px; height: 8px; border-radius: 50%; background: #47a4e6; }
+.storageLegend span + span i { background: #d99a54; }
+.storageHint { max-width: 620px; color: var(--muted); font-size: 10px; line-height: 1.55; }
+.cleanupButton { margin-top: 8px; padding: 9px 13px; border: 1px solid var(--line); border-radius: 8px; background: transparent; color: var(--text); cursor: pointer; font-size: 11px; font-weight: 600; }
+.cleanupButton:hover:not(:disabled) { background: var(--switch-off); }
+.cleanupButton:disabled { cursor: not-allowed; opacity: .45; }
+.storageStatus { display: inline-block; margin-left: 10px; color: var(--muted); font-size: 10px; }

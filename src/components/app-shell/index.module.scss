@@ -1,0 +1,141 @@
+.shell {
+  min-height: 100vh;
+  display: flex;
+}
+.sidebar {
+  width: 244px;
+  flex-shrink: 0;
+  padding: 17px 15px;
+  border-right: 1px solid var(--line);
+  background: var(--sidebar);
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: fit-content;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-size: 22px;
+  text-decoration: none;
+}
+.logo span {
+  display: flex;
+  width: 30px;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  background: var(--logo-bg);
+  border-radius: 9px;
+  font-family: Arial, sans-serif;
+  font-size: 15px;
+}
+.navigation {
+  margin-top: 38px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.navigation a {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  height: 38px;
+  padding: 0 13px;
+  border-radius: 9px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+}
+.navigation a[aria-current="page"] {
+  background: var(--nav-active);
+  color: var(--text);
+  box-shadow: var(--nav-glow);
+}
+.navigation svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+}
+.main {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+.header {
+  height: 63px;
+  border-bottom: 1px solid var(--line);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.username {
+  color: var(--muted);
+  font-size: 11px;
+}
+.avatar {
+  display: flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--avatar);
+  color: var(--text);
+  font-size: 13px;
+  text-decoration: none;
+}
+.header form {
+  margin: 0;
+}
+.header button {
+  padding: 6px 9px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 10px;
+}
+.header button:hover {
+  border-color: var(--control-active);
+  color: var(--text);
+}
+@media (max-width: 720px) {
+  .shell {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    padding: 13px 18px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .logo { align-self: center; }
+  .navigation {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 5px;
+  }
+  .navigation a {
+    height: 38px;
+    min-width: 0;
+    padding: 0 7px;
+    justify-content: center;
+    gap: 6px;
+    font-size: 10px;
+    text-align: center;
+    line-height: 1.15;
+  }
+  .header {
+    display: none;
+  }
+}

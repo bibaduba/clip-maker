@@ -1,0 +1,113 @@
+@font-face { font-family: 'Komika Title Preview'; src: url('/fonts/KomikaTitle.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Montserrat Preview'; src: url('/fonts/Montserrat.ttf') format('truetype'); font-weight: 100 900; font-display: swap; }
+@font-face { font-family: 'Russo One Preview'; src: url('/fonts/RussoOne-Regular.ttf') format('truetype'); font-display: swap; }
+.card { position: relative; z-index: 2; width: 100%; padding: 11px 12px 17px; border: 1px solid var(--card-border); border-radius: 20px; background: var(--card); box-shadow: var(--card-shadow); }
+.row { display: flex; gap: 10px; }
+.row input { min-width: 0; flex: 1; height: 50px; padding: 0 15px; border: 1px solid var(--input-border); border-radius: 10px; background: var(--input); color: var(--text); font-size: 13px; }
+.row input::placeholder { color: var(--muted); }
+.row button { width: 145px; border: 0; border-radius: 10px; background: var(--button); color: #fff; cursor: pointer; font-size: 13px; font-weight: 600; box-shadow: 0 5px 16px rgba(37, 124, 185, .28); }
+.row button:hover:not(:disabled) { background: var(--button-hover); box-shadow: 0 7px 19px rgba(37, 124, 185, .34); transform: translateY(-1px); }
+.row button:active:not(:disabled) { transform: translateY(0); }
+.row button:disabled { background: var(--button-disabled); cursor: wait; opacity: .58; box-shadow: none; }
+.settingsRow { display: flex; padding-top: 15px; align-items: center; justify-content: space-between; gap: 20px; }
+.controls { display: flex; align-items: center; gap: 7px; font-size: 12px; }
+.controls strong { margin-right: 3px; font-weight: 600; }
+.controls > span { color: var(--muted); }
+.switch { width: 38px; height: 20px; padding: 2px; border: 1px solid var(--line); border-radius: 20px; background: var(--switch-off); cursor: pointer; }
+.switch span { display: block; width: 16px; height: 16px; border-radius: 50%; background: var(--switch-knob); transition: transform .18s ease; }
+.switchOn { border-color: var(--switch-on); background: var(--switch-on); box-shadow: var(--switch-glow); }
+.switchOn span { transform: translateX(18px); }
+.count { display: flex; align-items: center; gap: 7px; color: var(--muted); font-size: 11px; }
+.count select { height: 36px; padding: 0 9px; border: 1px solid var(--input-border); border-radius: 9px; background: var(--input); color: var(--text); }
+.outputSettings { display: flex; gap: 10px; margin-top: 12px; }
+.outputSettings label { display: flex; flex: 1; align-items: center; justify-content: space-between; gap: 10px; color: var(--muted); font-size: 11px; }
+.outputSettings select { min-width: 138px; height: 36px; padding: 0 9px; border: 1px solid var(--input-border); border-radius: 9px; background: var(--input); color: var(--text); }
+.clipPrompt { display: flex; margin-top: 12px; flex-direction: column; align-items: stretch; gap: 6px; color: var(--text); font-size: 11px; }
+.clipPrompt span { display: flex; align-items: baseline; gap: 6px; font-weight: 600; }
+.clipPrompt small { color: var(--muted); font-size: 9px; font-weight: 400; }
+.clipPrompt input { width: 100%; height: 40px; padding: 0 12px; border: 1px solid var(--input-border); border-radius: 9px; background: var(--input); color: var(--text); font-size: 11px; }
+.clipPrompt input::placeholder { color: var(--muted); }
+.reframe { display: flex; margin-top: 12px; align-items: center; gap: 7px; color: var(--text); font-size: 11px; cursor: pointer; }
+.reframe input { width: 16px; height: 16px; accent-color: var(--control-active); cursor: pointer; }
+.reframe small { color: var(--muted); font-size: 9px; }
+.unavailable { cursor: not-allowed; opacity: .5; }
+.adhdSettings { margin-top: 8px; }
+.adhdSettings > p { margin: 7px 0 0 23px; color: var(--muted); font-size: 9px; }
+.adhdSettings code { color: var(--text); }
+.gameplayPicker { margin-top: 12px; padding: 12px; border: 1px solid var(--line); border-radius: 14px; background: rgba(0,0,0,.04); }
+.mainPosition { display: flex; margin-bottom: 11px; align-items: center; justify-content: space-between; gap: 12px; }
+.mainPosition > span { color: var(--muted); font-size: 9px; }
+.mainPosition > div { display: flex; padding: 2px; border-radius: 8px; background: var(--switch-off); }
+.mainPosition button { padding: 5px 8px; border: 0; border-radius: 6px; background: transparent; color: var(--muted); cursor: pointer; font-size: 8px; }
+.mainPosition button[aria-pressed='true'] { background: var(--input); color: var(--text); box-shadow: 0 1px 4px rgba(0,0,0,.16); }
+.gameplayTabs { display: flex; overflow-x: auto; gap: 5px; scrollbar-width: thin; }
+.gameplayTabs button { flex: 0 0 auto; padding: 7px 10px; border: 0; border-radius: 8px; background: transparent; color: var(--muted); cursor: pointer; font-size: 10px; }
+.gameplayTabs button[aria-pressed='true'] { background: var(--switch-off); color: var(--text); font-weight: 700; }
+.gameplayGrid { display: grid; max-height: 300px; margin-top: 11px; overflow-y: auto; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 9px; scrollbar-width: thin; }
+.gameplayGrid button { min-width: 0; padding: 3px; overflow: hidden; border: 1px solid var(--line); border-radius: 10px; background: var(--input); color: var(--muted); cursor: pointer; }
+.gameplayGrid button[aria-pressed='true'] { border-color: #087cff; color: var(--text); box-shadow: 0 0 0 2px rgba(8,124,255,.12); }
+.gameplayGrid video { display: block; width: 100%; aspect-ratio: 9 / 12; border-radius: 7px; background: #050505; object-fit: cover; }
+.gameplayGrid span { display: block; padding: 6px 4px 4px; overflow: hidden; font-size: 9px; text-overflow: ellipsis; white-space: nowrap; }
+.fitBackground { display: flex; margin: 12px 0 0; padding: 0; align-items: center; gap: 8px; border: 0; }
+.fitBackground legend { float: left; margin-right: 4px; color: var(--muted); font-size: 10px; }
+.fitBackground button { display: flex; padding: 5px 8px; align-items: center; gap: 6px; border: 1px solid var(--line); border-radius: 8px; background: transparent; color: var(--muted); cursor: pointer; font-size: 9px; }
+.fitBackground button[aria-pressed='true'] { border-color: #087cff; color: var(--text); box-shadow: 0 0 0 2px rgba(8,124,255,.1); }
+.fitBackground i { display: block; width: 22px; height: 15px; border-radius: 3px; }
+.fitBlack { background: #050505; }
+.fitBlur { background: radial-gradient(circle at 65% 35%, #74aadd, transparent 28%), radial-gradient(circle at 30% 70%, #d18f68, transparent 34%), #50545e; filter: blur(.6px); }
+.captionStyles { width: min(620px, 100%); margin: 24px auto 4px; text-align: center; }
+.captionStyles h2 { margin: 0 0 12px; font-size: 12px; font-weight: 500; }
+.captionGrid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); align-items: start; gap: 12px; }
+.captionGrid button { width: 100%; min-width: 0; padding: 0; border: 0; background: transparent; color: var(--muted); cursor: pointer; }
+.captionPreview { position: relative; display: flex; width: 100%; aspect-ratio: 9 / 16; align-items: flex-end; justify-content: center; overflow: hidden; padding-bottom: 25%; border: 2px solid transparent; border-radius: 18px; background: #111; box-shadow: 0 4px 12px rgba(0,0,0,.22); }
+.captionPreview img { object-fit: cover; }
+.captionPreview::after { content: ''; position: absolute; inset: 55% 0 0; background: linear-gradient(transparent, rgba(0,0,0,.18)); }
+.captionPreview b { position: relative; z-index: 2; font-family: Bahnschrift, Impact, sans-serif; font-size: 14px; font-weight: 900; letter-spacing: .2px; -webkit-text-stroke: 1px #080808; paint-order: stroke fill; text-shadow: 0 2px 2px rgba(0,0,0,.55); }
+.captionPreview b i { font-style: normal; }
+.captionPreview b i + i { margin-left: .28em; }
+.captionPreview b i { animation: captionWordOne 1.8s steps(1, end) infinite; }
+.captionPreview b i + i { animation-name: captionWordTwo; }
+.caption_default b { font-family: Arial, sans-serif; font-size: 12px; -webkit-text-stroke-width: .8px; text-shadow: 0 1px 1px rgba(0,0,0,.5); animation: captionFade 1.8s ease-in-out infinite; }
+.caption_modern b { font-family: Bahnschrift, sans-serif; font-size: 14px; animation: captionFade 1.8s ease-in-out infinite; }
+.caption_bouncy b { font-family: 'Montserrat Preview', Montserrat, sans-serif; font-size: 14px; text-shadow: 0 3px 2px rgba(0,0,0,.65); animation: captionBounce 1.8s ease-out infinite; }
+.caption_mrbeast b { font-family: 'Russo One Preview', 'Komika Title Preview', sans-serif; font-size: 15px; letter-spacing: .6px; -webkit-text-stroke-width: 1.3px; animation: captionPunch 1.8s ease-out infinite; }
+.caption_business b { padding: 4px 7px; border-radius: 4px; background: rgba(0,0,0,.72); font-family: Bahnschrift, sans-serif; font-size: 11px; -webkit-text-stroke: 0; text-shadow: none; animation: captionFade 1.8s ease-in-out infinite; }
+@keyframes captionWordOne { 0%, 48% { opacity: 1; } 49%, 100% { opacity: .48; } }
+@keyframes captionWordTwo { 0%, 48% { opacity: .48; } 49%, 100% { opacity: 1; } }
+@keyframes captionFade { 0%, 8% { opacity: 0; } 18%, 88% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes captionBounce { 0%, 5% { opacity: 0; transform: rotate(-2deg) scale(.82); } 18% { opacity: 1; transform: rotate(-2deg) scale(1.08); } 28%, 88% { opacity: 1; transform: rotate(-2deg) scale(1); } 100% { opacity: 0; transform: rotate(-2deg) scale(.96); } }
+@keyframes captionPunch { 0%, 5% { opacity: 0; transform: rotate(-2deg) scale(.88); } 16% { opacity: 1; transform: rotate(-2deg) scale(1.05); } 24%, 88% { opacity: 1; transform: rotate(-2deg) scale(1); } 100% { opacity: 0; transform: rotate(-2deg) scale(.96); } }
+.captionLabel { display: block; margin-top: 8px; font-size: 11px; }
+.captionGrid button:hover .captionPreview { transform: translateY(-2px); }
+.captionGrid button[aria-pressed='true'] .captionPreview { border-color: #087cff; box-shadow: 0 0 0 2px rgba(8,124,255,.12), 0 5px 12px rgba(0,0,0,.2); }
+.captionGrid button[aria-pressed='true'] .captionLabel { color: #087cff; font-weight: 700; }
+.captionColors { display: flex; margin-top: 16px; align-items: center; justify-content: center; gap: 9px; }
+.captionColors button { display: grid; width: 28px; height: 28px; padding: 3px; place-items: center; border: 2px solid transparent; border-radius: 50%; background: transparent; cursor: pointer; }
+.captionColors button span { width: 18px; height: 18px; border: 1px solid rgba(128,128,128,.5); border-radius: 50%; box-shadow: 0 1px 4px rgba(0,0,0,.25); }
+.captionColors button[aria-pressed='true'] { border-color: #087cff; }
+.captionEffects { display: grid; margin-top: 16px; padding: 14px 16px; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 20px; border: 1px solid var(--card-border); border-radius: 14px; background: var(--card); text-align: left; }
+.captionEffects label { display: flex; align-items: center; gap: 8px; color: var(--text); font-size: 11px; cursor: pointer; }
+.captionEffects input { width: 16px; height: 16px; accent-color: var(--control-active); cursor: pointer; }
+.status { position: absolute; right: 16px; bottom: 10px; margin: 0; color: var(--muted); font-size: 10px; }
+.srOnly { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+@media (max-width: 620px) {
+  .card { padding-bottom: 34px; }
+  .row { flex-direction: column; }
+  .row input { width: 100%; min-height: 52px; flex: none; }
+  .row button { width: 100%; height: 46px; }
+  .controls { flex-wrap: wrap; }
+  .settingsRow { align-items: flex-start; gap: 12px; }
+  .outputSettings { flex-direction: column; }
+  .count { flex-shrink: 0; }
+  .captionStyles { width: 100%; margin-top: 20px; }
+  .captionGrid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .captionPreview { border-radius: 14px; }
+  .captionPreview b { font-size: 13px; }
+  .captionEffects { grid-template-columns: 1fr; }
+  .gameplayGrid { display: flex; max-height: none; overflow-x: auto; overflow-y: hidden; }
+  .gameplayGrid button { width: 112px; flex: 0 0 112px; }
+  .mainPosition { align-items: stretch; flex-direction: column; }
+  .mainPosition > div { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .status { position: static; min-height: 12px; margin-top: 8px; }
+}
+@media (prefers-reduced-motion: reduce) { .captionPreview b, .captionPreview b i { animation: none; } }

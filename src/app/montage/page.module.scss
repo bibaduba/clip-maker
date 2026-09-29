@@ -1,0 +1,23 @@
+.page { max-width: 1080px; margin: 0 auto; padding: 54px 42px 80px; }
+.eyebrow { color: #7ac3ff; font-size: 11px; font-weight: 700; letter-spacing: .14em; }
+.page h1 { margin: 16px 0 10px; font-size: clamp(34px, 5vw, 62px); font-weight: 500; letter-spacing: -.05em; }
+.lead { max-width: 640px; margin: 0; color: var(--muted); line-height: 1.65; font-size: 15px; }
+.storyboard { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 38px 0 48px; }
+.storyboard div { min-height: 160px; display: flex; flex-direction: column; justify-content: space-between; padding: 17px; border: 1px solid var(--line); border-radius: 16px; background: linear-gradient(150deg, rgba(67,165,255,.16), transparent 60%), var(--sidebar); }
+.storyboard div:nth-child(2) { background: linear-gradient(150deg, rgba(255,212,0,.16), transparent 60%), var(--sidebar); }
+.storyboard div:nth-child(3) { background: linear-gradient(150deg, rgba(40,199,111,.16), transparent 60%), var(--sidebar); }
+.storyboard div:nth-child(4) { background: linear-gradient(150deg, rgba(179,125,255,.20), transparent 60%), var(--sidebar); }
+.storyboard span { color: var(--muted); font-size: 10px; letter-spacing: .1em; }
+.storyboard strong { font-size: 20px; font-weight: 500; }
+.heading { display: flex; align-items: baseline; justify-content: space-between; gap: 15px; }
+.heading h2 { margin: 0 0 17px; font-size: 22px; font-weight: 500; }
+.heading span { color: var(--muted); font-size: 12px; }
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.steps article { padding: 20px; border: 1px solid var(--line); border-radius: 15px; }
+.steps article > span { color: #7ac3ff; font-size: 13px; }
+.steps h3 { margin: 18px 0 8px; font-size: 16px; font-weight: 600; }
+.steps p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.notice { margin-top: 28px; padding: 16px 18px; border: 1px solid var(--line); border-radius: 12px; color: var(--muted); font-size: 13px; line-height: 1.5; }
+.history { margin-top: 45px; }
+.history h2 { font-size: 22px; font-weight: 500; }
+@media (max-width: 760px) { .page { padding: 32px 18px 60px; } .storyboard { grid-template-columns: repeat(2, minmax(0, 1fr)); } .steps { grid-template-columns: 1fr; } }

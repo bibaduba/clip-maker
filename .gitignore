@@ -1,0 +1,38 @@
+# Node.js / Next.js
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+__pycache__/
+*.py[cod]
+
+# Secrets and machine-specific configuration
+.env
+.env.local
+.env.*.local
+!.env.example
+*.pem
+*.key
+cookies.txt
+*cookies*.txt
+
+# Locally generated media, database, models and downloads
+/storage/
+/output/
+public/gameplay/**/*.mp4
+public/gameplay/**/*.webm
+public/gameplay/**/*.mov
+public/gameplay/**/*.mkv
+public/gameplay/**/*.avi
+/.tools/
+/.venv-asr/
+/.cache-asr/
+/.pnpm-store/
+
+# Logs, coverage and OS/editor files
+*.log
+coverage/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

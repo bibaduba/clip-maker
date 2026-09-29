@@ -1,0 +1,11 @@
+.form { max-width: 700px; margin: 34px 0; padding: 23px; border: 1px solid var(--line); border-radius: 18px; background: var(--sidebar); display: grid; gap: 18px; }
+.form label { display: grid; gap: 8px; font-size: 13px; }
+.form small { color: var(--muted); font-size: 11px; }
+.form input:not([type="checkbox"]), .form select { width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 9px; color: var(--text); background: var(--sidebar); font: inherit; }
+.form input::placeholder { color: var(--muted); }
+.row { display: flex; align-items: end; gap: 24px; }
+.row > label:first-child { width: 180px; }
+.row .check { display: flex; align-items: center; gap: 9px; min-height: 44px; }
+.form button { width: fit-content; padding: 12px 18px; border: 0; border-radius: 9px; color: white; background: #347fc1; cursor: pointer; font-weight: 600; }
+.form button:disabled { opacity: .6; cursor: wait; }
+.error { margin: 0; color: #ff8a8a; font-size: 13px; }
